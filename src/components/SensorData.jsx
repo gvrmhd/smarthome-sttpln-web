@@ -59,13 +59,13 @@ const SensorData = () => {
     ) : (
       <CloudRain size='25' title='Rainy' className={classes.icon} />
     );
-
+  
   return (
     <Paper className={classes.paper}>
       <Box display='flex' alignItems='center'>
         {SuhuIcon}
         <Typography variant='h6' className={classes.title}>
-          Suhu
+          Temperature
         </Typography>
         <Typography variant='h6' className={classes.titleStatus}>
           {sensor.suhu}°C
@@ -74,7 +74,7 @@ const SensorData = () => {
       <Box display='flex' alignItems='center'>
         {CahayaIcon}
         <Typography variant='h6' className={classes.title}>
-          Cahaya
+          Light
         </Typography>
         <Typography variant='h6' className={classes.titleStatus}>
           {sensor.cahaya}
@@ -83,7 +83,7 @@ const SensorData = () => {
       <Box display='flex' alignItems='center'>
         {CuacaIcon}
         <Typography variant='h6' className={classes.title}>
-          Cuaca
+          Weather
         </Typography>
         <Typography variant='h6' className={classes.titleStatus}>
           {sensor.cuaca}

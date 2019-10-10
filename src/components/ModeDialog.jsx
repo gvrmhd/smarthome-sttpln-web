@@ -1,13 +1,13 @@
-import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
-import Button from '@material-ui/core/Button';
-import Dialog from '@material-ui/core/Dialog';
-import DialogActions from '@material-ui/core/DialogActions';
-import DialogContent from '@material-ui/core/DialogContent';
-import DialogContentText from '@material-ui/core/DialogContentText';
-import DialogTitle from '@material-ui/core/DialogTitle';
+import React from "react";
+import { makeStyles } from "@material-ui/core/styles";
+import Button from "@material-ui/core/Button";
+import Dialog from "@material-ui/core/Dialog";
+import DialogActions from "@material-ui/core/DialogActions";
+import DialogContent from "@material-ui/core/DialogContent";
+import DialogContentText from "@material-ui/core/DialogContentText";
+import DialogTitle from "@material-ui/core/DialogTitle";
 
-import { Context } from '../utils/AppContext';
+import { Context } from "../utils/AppContext";
 
 const useStyles = makeStyles(theme => ({
   title: {
@@ -17,7 +17,7 @@ const useStyles = makeStyles(theme => ({
     color: theme.palette.common.white
   },
   innerAppbar: {
-    boxShadow: 'none'
+    boxShadow: "none"
   }
 }));
 
@@ -43,55 +43,55 @@ const ModeDialog = () => {
 
   const handleButton = () => {
     handleClose();
-    update('manual', !manual);
+    update("manual", !manual);
   };
 
   return (
     <>
       <Button className={classes.button} onClick={handleClickOpen}>
-        {manual ? 'manual' : 'auto'}
+        {manual ? "manual" : "auto"}
       </Button>
 
       <Dialog open={mDialog} onClose={handleClose}>
-        <DialogTitle>Mode SmartHome</DialogTitle>
+        <DialogTitle>Automatic Mode</DialogTitle>
         <DialogContent>
           <DialogContentText>
-            Dalam konfigurasi Automatic, semua alat akan menyesuaikan diri
-            dengan kondisi ruangan dan tidak dapat diatur melalui aplikasi. Apa
-            anda yakin ingin menggunakan konfigurasi Automatic ?
+            Automatic configuration will operate all devices based on reading
+            from all sensors. You won't be able to control these devices
+            directly. Do you still want to use Automatic Configuration
           </DialogContentText>
         </DialogContent>
         <DialogActions>
-          <Button onClick={handleClose} color='primary'>
-            Tidak
+          <Button onClick={handleClose} color="primary">
+            No
           </Button>
           <Button
             onClick={handleButton}
-            variant='contained'
-            color='primary'
+            variant="contained"
+            color="primary"
             autoFocus
           >
-            Iya
+            Yes
           </Button>
         </DialogActions>
       </Dialog>
 
       <Dialog open={aDialog} onClose={handleClose}>
-        <DialogTitle>Mode SmartHome</DialogTitle>
+        <DialogTitle>Manual Mode</DialogTitle>
         <DialogContent>
-          <DialogContentText>Kembali ke konfigurasi Manual ?</DialogContentText>
+          <DialogContentText>Back to manual configuration ?</DialogContentText>
         </DialogContent>
         <DialogActions>
-          <Button onClick={handleClose} color='primary'>
-            Tidak
+          <Button onClick={handleClose} color="primary">
+            No
           </Button>
           <Button
             onClick={handleButton}
-            variant='contained'
-            color='primary'
+            variant="contained"
+            color="primary"
             autoFocus
           >
-            Iya
+            Yes
           </Button>
         </DialogActions>
       </Dialog>
