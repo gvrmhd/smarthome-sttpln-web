@@ -1,0 +1,17 @@
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body,
+html,
+#root {
+  overflow: auto;
+}
+
+@media (min-width: 961px) {
+  html {
+    overflow: hidden;
+  }
+}
