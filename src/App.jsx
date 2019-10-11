@@ -40,15 +40,15 @@ const GridContainer = styled(Grid)`
 
 const View = () => {
   const {
-    lampu1,
-    lampu2,
-    lampu3,
-    lampu4,
-    kipas,
-    jemuran,
+    light1,
+    light2,
+    light3,
+    light4,
+    fan,
+    laundry,
     update,
-    lampu4sts,
-    lampu4lvl
+    light4sts,
+    light4lvl
   } = React.useContext(Context);
 
   return (
@@ -58,45 +58,45 @@ const View = () => {
       </Grid>
       <Grid item xs={12} md={4}>
         <CustomPaper
-          title='Lampu Atas'
-          variant='lampu'
-          state={lampu1}
-          handler={() => update('lampu1', !lampu1)}
+          title='Balcony'
+          variant='light'
+          state={light1}
+          handler={() => update('light1', !light1)}
         />
         <CustomPaper
-          title='Lampu Luar'
-          variant='lampu'
-          state={lampu2}
-          handler={() => update('lampu2', !lampu2)}
+          title='Bedroom'
+          variant='light'
+          state={light2}
+          handler={() => update('light2', !light2)}
         />
         <CustomPaper
-          title='Lampu Bawah'
-          variant='lampu'
-          state={lampu3}
-          handler={() => update('lampu3', !lampu3)}
+          title='Outdoor'
+          variant='light'
+          state={light3}
+          handler={() => update('light3', !light3)}
         />
         <CustomPaper
-          title='Lampu Dalam'
-          variant='lampu'
+          title='Living Room'
+          variant='light'
           useLevel
-          state={lampu4.status}
-          level={lampu4.level}
-          handler={() => lampu4sts(!lampu4.status)}
-          levelHandler={val => lampu4lvl(val)}
+          state={light4.status}
+          level={light4.level}
+          handler={() => light4sts(!light4.status)}
+          levelHandler={val => light4lvl(val)}
         />
       </Grid>
       <Grid item xs={12} md={4}>
         <CustomPaper
-          title='Kipas'
-          variant='kipas'
-          state={kipas}
-          handler={() => update('kipas', !kipas)}
+          title='Fan'
+          variant='fan'
+          state={fan}
+          handler={() => update('fan', !fan)}
         />
         <CustomPaper
-          title='Jemuran'
-          variant='jemuran'
-          state={jemuran}
-          handler={() => update('jemuran', !jemuran)}
+          title='Laundry'
+          variant='laundry'
+          state={laundry}
+          handler={() => update('laundry', !laundry)}
         />
       </Grid>
     </GridContainer>

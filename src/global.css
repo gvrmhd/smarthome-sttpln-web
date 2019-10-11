@@ -10,10 +10,6 @@ html,
   overflow: auto;
 }
 
-#division{
-  
-}
-
 @media (min-width: 961px) {
   html {
     overflow: hidden;

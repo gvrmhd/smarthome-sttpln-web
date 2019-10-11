@@ -82,13 +82,13 @@ const CustomPaper = props => {
   return (
     <Paper className={classes.paper}>
       <Box display='flex' alignItems='center'>
-        {props.variant === 'kipas' && (
+        {props.variant === 'fan' && (
           <Fan size='25' title='Light' className={classes.icon} />
         )}
-        {props.variant === 'jemuran' && (
+        {props.variant === 'laundry' && (
           <Closet size='25' title='Light' className={classes.icon} />
         )}
-        {props.variant === 'lampu' &&
+        {props.variant === 'light' &&
           (props.state ? (
             <Solid size='25' title='Light' className={classes.icon} />
           ) : (
@@ -106,7 +106,7 @@ const CustomPaper = props => {
           onClick={handleClick}
         >
           {manual ? (
-            props.variant === 'jemuran' ? (
+            props.variant === 'laundry' ? (
               props.state ? (
                 'DALAM'
               ) : (

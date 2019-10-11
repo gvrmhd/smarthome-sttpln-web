@@ -39,54 +39,53 @@ const SensorData = () => {
   const classes = useStyles();
   const { sensor } = React.useContext(Context);
 
-  const SuhuIcon =
-    sensor.suhu >= 30 ? (
+  const TempIcon =
+    sensor.temp >= 30 ? (
       <ThermometerFull size='25' title='Moderate' className={classes.icon} />
     ) : (
       <ThermometerHalf size='25' title='Hot' className={classes.icon} />
     );
 
-  const CahayaIcon =
-    sensor.cahaya === 'Terang' ? (
-      <Sun size='25' title='Light' className={classes.icon} />
+  const BrightIcon = sensor.bright ? (
+    <Sun size='25' title='Light' className={classes.icon} />
+  ) : (
+    <Moon size='25' title='Dark' className={classes.icon} />
+  );
+
+  const WeatherIcon =
+    sensor.rain ? (
+      <CloudRain size='25' title='Rainy' className={classes.icon} />
     ) : (
-      <Moon size='25' title='Dark' className={classes.icon} />
+      <Cloud size='25' title='Cloudy' className={classes.icon} />
     );
 
-  const CuacaIcon =
-    sensor.cuaca === 'Cerah' ? (
-      <Cloud size='25' title='Cloudy' className={classes.icon} />
-    ) : (
-      <CloudRain size='25' title='Rainy' className={classes.icon} />
-    );
-  
   return (
     <Paper className={classes.paper}>
       <Box display='flex' alignItems='center'>
-        {SuhuIcon}
+        {TempIcon}
         <Typography variant='h6' className={classes.title}>
           Temperature
         </Typography>
         <Typography variant='h6' className={classes.titleStatus}>
-          {sensor.suhu}°C
+          {sensor.temp}°C
         </Typography>
       </Box>
       <Box display='flex' alignItems='center'>
-        {CahayaIcon}
+        {BrightIcon}
         <Typography variant='h6' className={classes.title}>
-          Light
+          Lighting
         </Typography>
         <Typography variant='h6' className={classes.titleStatus}>
-          {sensor.cahaya}
+          {sensor.bright ? 'Bright' : 'Dark'}
         </Typography>
       </Box>
       <Box display='flex' alignItems='center'>
-        {CuacaIcon}
+        {WeatherIcon}
         <Typography variant='h6' className={classes.title}>
           Weather
         </Typography>
         <Typography variant='h6' className={classes.titleStatus}>
-          {sensor.cuaca}
+          {sensor.rain ? 'Rainy' : 'Cloudy'}
         </Typography>
       </Box>
     </Paper>

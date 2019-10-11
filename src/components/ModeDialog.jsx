@@ -1,13 +1,13 @@
-import React from "react";
-import { makeStyles } from "@material-ui/core/styles";
-import Button from "@material-ui/core/Button";
-import Dialog from "@material-ui/core/Dialog";
-import DialogActions from "@material-ui/core/DialogActions";
-import DialogContent from "@material-ui/core/DialogContent";
-import DialogContentText from "@material-ui/core/DialogContentText";
-import DialogTitle from "@material-ui/core/DialogTitle";
+import React from 'react';
+import { makeStyles } from '@material-ui/core/styles';
+import Button from '@material-ui/core/Button';
+import Dialog from '@material-ui/core/Dialog';
+import DialogActions from '@material-ui/core/DialogActions';
+import DialogContent from '@material-ui/core/DialogContent';
+import DialogContentText from '@material-ui/core/DialogContentText';
+import DialogTitle from '@material-ui/core/DialogTitle';
 
-import { Context } from "../utils/AppContext";
+import { Context } from '../utils/AppContext';
 
 const useStyles = makeStyles(theme => ({
   title: {
@@ -17,7 +17,7 @@ const useStyles = makeStyles(theme => ({
     color: theme.palette.common.white
   },
   innerAppbar: {
-    boxShadow: "none"
+    boxShadow: 'none'
   }
 }));
 
@@ -43,13 +43,13 @@ const ModeDialog = () => {
 
   const handleButton = () => {
     handleClose();
-    update("manual", !manual);
+    update('manual', !manual);
   };
 
   return (
     <>
       <Button className={classes.button} onClick={handleClickOpen}>
-        {manual ? "manual" : "auto"}
+        {manual ? 'manual' : 'auto'}
       </Button>
 
       <Dialog open={mDialog} onClose={handleClose}>
@@ -62,13 +62,13 @@ const ModeDialog = () => {
           </DialogContentText>
         </DialogContent>
         <DialogActions>
-          <Button onClick={handleClose} color="primary">
+          <Button onClick={handleClose} color='primary'>
             No
           </Button>
           <Button
             onClick={handleButton}
-            variant="contained"
-            color="primary"
+            variant='contained'
+            color='primary'
             autoFocus
           >
             Yes
@@ -82,13 +82,13 @@ const ModeDialog = () => {
           <DialogContentText>Back to manual configuration ?</DialogContentText>
         </DialogContent>
         <DialogActions>
-          <Button onClick={handleClose} color="primary">
+          <Button onClick={handleClose} color='primary'>
             No
           </Button>
           <Button
             onClick={handleButton}
-            variant="contained"
-            color="primary"
+            variant='contained'
+            color='primary'
             autoFocus
           >
             Yes

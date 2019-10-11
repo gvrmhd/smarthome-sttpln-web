@@ -5,7 +5,6 @@
   "dependencies": {
     "@material-ui/core": "^4.4.3",
     "@material-ui/icons": "^4.4.3",
-    "classnames": "^2.2.6",
     "firebase": "^7.0.0",
     "proptypes": "^1.1.0",
     "react": "^16.9.0",
@@ -14,7 +13,6 @@
     "react-scripts": "3.1.2",
     "styled-components": "^4.4.0",
     "styled-icons": "^8.4.2",
-    "typeface-roboto": "^0.0.75",
     "typeface-titillium-web": "^0.0.72"
   },
   "scripts": {
