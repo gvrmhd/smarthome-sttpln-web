@@ -108,9 +108,9 @@ const CustomPaper = props => {
           {manual ? (
             props.variant === 'laundry' ? (
               props.state ? (
-                'DALAM'
+                'OUT'
               ) : (
-                'LUAR'
+                'IN'
               )
             ) : (
               <PowerSettingsNew />

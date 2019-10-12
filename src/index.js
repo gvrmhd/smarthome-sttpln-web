@@ -5,7 +5,6 @@ import * as serviceWorker from './serviceWorker';
 
 import { createMuiTheme, MuiThemeProvider } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
-import 'typeface-roboto';
 import 'typeface-titillium-web';
 import './global.css';
 
