@@ -8,8 +8,8 @@ import {
   ThermometerFull,
   Sun,
   Moon,
-  CloudRain,
-  Cloud
+  CloudSunRain,
+  CloudSun
 } from 'styled-icons/fa-solid';
 
 import { Context } from '../utils/AppContext';
@@ -54,9 +54,9 @@ const SensorData = () => {
 
   const WeatherIcon =
     sensor.rain ? (
-      <CloudRain size='25' title='Rainy' className={classes.icon} />
+      <CloudSunRain size='25' title='Rainy' className={classes.icon} />
     ) : (
-      <Cloud size='25' title='Cloudy' className={classes.icon} />
+      <CloudSun size='25' title='Cloudy' className={classes.icon} />
     );
 
   return (
@@ -67,7 +67,7 @@ const SensorData = () => {
           Temperature
         </Typography>
         <Typography variant='h6' className={classes.titleStatus}>
-          {sensor.temp}°C
+          {sensor.temp.toFixed(1)}°C
         </Typography>
       </Box>
       <Box display='flex' alignItems='center'>
@@ -85,7 +85,7 @@ const SensorData = () => {
           Weather
         </Typography>
         <Typography variant='h6' className={classes.titleStatus}>
-          {sensor.rain ? 'Rainy' : 'Cloudy'}
+          {sensor.rain ? 'Rainy' : 'Sunny/Cloudy'}
         </Typography>
       </Box>
     </Paper>
